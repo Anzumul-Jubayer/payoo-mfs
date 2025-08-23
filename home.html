@@ -50,28 +50,37 @@
           is low
         </p>
       </div>
-      <div class="grid grid-cols-3  gap-3 p-5">
-        <div id="add-click" class="border-1 border-gray-300 text-center rounded-2xl p-6">
-          <img src="./assets/wallet1.png" alt="" class="mx-auto" />
+      <div class="grid grid-cols-3 gap-3 p-5">
+        <div
+          id="add-click"
+          class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn"
+        >
+          <img src="./assets/wallet1.png" alt="" class=" mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Add Money</h2>
         </div>
-        <div id="cash-out-click" class="border-1 border-gray-300 text-center rounded-2xl p-6">
+        <div
+          id="cash-out-click"
+          class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn"
+        >
           <img src="./assets/send1.png" alt="" class="mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Cash out</h2>
         </div>
-        <div id="transfer-click" class="border-1 border-gray-300 text-center rounded-2xl p-6">
+        <div
+          id="transfer-click"
+          class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn"
+        >
           <img src="./assets/money1.png" alt="" class="mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Transfer Money</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center rounded-2xl p-6">
+        <div id="coupon-click" class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn">
           <img src="./assets/bonus1.png" alt="" class="mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Get Bonus</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center rounded-2xl p-6">
+        <div class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn">
           <img src="./assets/purse1.png" alt="" class="mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Pay Bill</h2>
         </div>
-        <div class="border-1 border-gray-300 text-center rounded-2xl p-6">
+        <div class="border-1 border-gray-300 text-center rounded-2xl p-6 form-btn">
           <img src="./assets/transaction1.png" alt="" class="mx-auto" />
           <h2 class="text-[#08080880] font-semibold">Transaction</h2>
         </div>
@@ -79,12 +88,16 @@
     </div>
     <div class="all-form-section max-w-lg mx-auto">
       <!-- add money -->
-      <div id="add-money-parent">
+      <div id="add-money-parent" class="forms">
         <h1 class="font-bold my-4">Add Money</h1>
         <form action="" class="bg-white rounded-2xl p-8 w-full">
           <div>
-            <label for="" class="text-[1rem] font-medium ">Select a Bank</label> <br />
-            <select id="bank" class="select bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full">
+            <label for="" class="text-[1rem] font-medium">Select a Bank</label>
+            <br />
+            <select
+              id="bank"
+              class="select bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+            >
               <option>Select Bank</option>
               <option>Sonali Bank</option>
               <option>Rupali Bank</option>
@@ -92,111 +105,155 @@
             </select>
           </div>
           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Bank Account Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 11 digit account number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="account-num"
-        />
+            <label for="" class="text-[1rem] font-medium"
+              >Bank Account Number</label
+            >
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 11 digit account number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="account-num"
+            />
           </div>
           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium  ">Amount to Add</label> <br />
-        <input
-          type="text"
-          placeholder="Add Amount "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="add-money"
-        />
+            <label for="" class="text-[1rem] font-medium">Amount to Add</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Add Amount "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="add-money"
+            />
           </div>
           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Pin Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 4 digit pin number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="pin-num"
-        />
+            <label for="" class="text-[1rem] font-medium">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="pin-num"
+            />
           </div>
-          <button  class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white" id="add-money-btn">Add Money</button>
+          <button
+            class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white"
+            id="add-money-btn"
+          >
+            Add Money
+          </button>
         </form>
       </div>
       <!-- Cash Out -->
-      <div id="cash-out-parent" class="hidden">
-         <h1 class="font-bold my-4">Cash Out</h1>
-         <form action=""class="bg-white rounded-2xl p-8 w-full">
-            <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Agent Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 11 digit number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="agent-num"
-        />
-          </div>
-           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium  ">Amount</label> <br />
-        <input
-          type="text"
-          placeholder="Amount to withdraw "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="cash-out"
-        />
+      <div id="cash-out-parent" class="forms hidden">
+        <h1 class="font-bold my-4">Cash Out</h1>
+        <form action="" class="bg-white rounded-2xl p-8 w-full">
+          <div class="mt-2">
+            <label for="" class="text-[1rem] font-medium">Agent Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 11 digit number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="agent-num"
+            />
           </div>
           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Pin Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 4 digit pin number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="out-pin-num"
-        />
-         <button  class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white" id="cash-out-btn">Withdraw Money</button>
+            <label for="" class="text-[1rem] font-medium">Amount</label> <br />
+            <input
+              type="text"
+              placeholder="Amount to withdraw "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="cash-out"
+            />
           </div>
-          
-         </form>
+          <div class="mt-2">
+            <label for="" class="text-[1rem] font-medium">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="out-pin-num"
+            />
+            <button
+              class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white"
+              id="cash-out-btn"
+            >
+              Withdraw Money
+            </button>
+          </div>
+        </form>
       </div>
       <!-- transfer Money -->
-      <div id="transfer-parent" class="hidden">
-         <h1 class="font-bold my-4">Transfer Money</h1>
-         <form action=""class="bg-white rounded-2xl p-8 w-full">
-            <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Account Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 11 digit number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="transfer-num"
-        />
-          </div>
-           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium  ">Amount</label> <br />
-        <input
-          type="text"
-          placeholder="Amount to transfer"
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="transfer-amount"
-        />
+      <div id="transfer-parent" class="forms hidden">
+        <h1 class="font-bold my-4">Transfer Money</h1>
+        <form action="" class="bg-white rounded-2xl p-8 w-full">
+          <div class="mt-2">
+            <label for="" class="text-[1rem] font-medium">Account Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 11 digit number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="transfer-num"
+            />
           </div>
           <div class="mt-2">
-            <label for="" class="text-[1rem] font-medium ">Pin Number</label> <br />
-        <input
-          type="text"
-          placeholder="Enter 4 digit pin number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
-          id="transfer-pin"
-        />
-         <button  class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white" id="transfer-btn">Send Now</button>
+            <label for="" class="text-[1rem] font-medium">Amount</label> <br />
+            <input
+              type="text"
+              placeholder="Amount to transfer"
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="transfer-amount"
+            />
           </div>
+          <div class="mt-2">
+            <label for="" class="text-[1rem] font-medium">Pin Number</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number "
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="transfer-pin"
+            />
+            <button
+              class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white"
+              id="transfer-btn"
+            >
+              Send Now
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- coupon -->
+      <div id="coupon-parent" class="forms hidden" >
+         <h1 class="font-bold my-4">Get Bonus</h1>
+         <form action=""class="bg-white rounded-2xl p-8 w-full>
+            <div class="mt-2">
+            <label for="" class="text-[1rem] font-medium">Enter Bonus Coupon</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter your coupon"
+              class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
+              id="coupon"
+            /> 
           
+        <button
+              class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white"
+              id="coupon-btn"
+            >
+              Get Bonus
+            </button>
          </form>
 
-
+      </div>
+      <div>
+        
       </div>
     </div>
 
     <script src="./js/home.js"></script>
-    
   </body>
 </html>
-
