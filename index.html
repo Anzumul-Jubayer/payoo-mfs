@@ -14,31 +14,49 @@
     <title>Payoo-MFS-Login</title>
   </head>
   <body class="bg-[#f4f5f7] h-[100vh] flex flex-col justify-center items-center">
-   <div class="h-[150px] w-[300px] bg-[url(./assets/bg.png)] bg-no-repeat bg-cover flex justify-center items-center ">
-        <img src="./assets/Group.png" alt="" class="w-[75px] h-[72px]">
-   </div>
-   <form class="bg-white rounded-2xl p-8 w-full">
+    <!-- Logo Banner -->
+    <div
+      class="h-[150px] w-[300px] bg-[url(./assets/bg.png)] bg-no-repeat bg-cover flex justify-center items-center rounded-t-2xl"
+    >
+      <img src="./assets/Group.png" alt="Logo" class="w-[75px] h-[72px]" />
+    </div>
+
+    <!-- Login Form -->
+    <form
+      class="bg-white rounded-2xl p-8 w-full max-w-sm "
+      id="login-form"
+    >
       <div>
-        <label for="" class="text-[1rem] font-medium ">Mobile Number</label> <br />
+        <label for="mobile-num" class="text-[1rem] font-medium">Mobile Number</label>
         <input
           type="text"
-          placeholder="Enter your number "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none"
+          placeholder="Enter your number"
+          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
           id="mobile-num"
-        /> 
+        />
       </div>
-      <div class="mt-2">
-        <label for="" class="text-[1rem] font-medium ">4 digit pin</label> <br />
+
+      <div class="mt-4">
+        <label for="pin" class="text-[1rem] font-medium">4 digit pin</label>
         <input
-          type="text"
-          placeholder="Enter 4 Digit Pin "
-          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none"
+          type="password"
+          placeholder="Enter 4 Digit Pin"
+          maxlength="4"
+          class="input bg-[#f4f5f7] rounded-[32px] mt-2 border-none w-full"
           id="pin"
         />
       </div>
-      <button  class="btn bg-[#0874f2] mt-4 w-full rounded-[32px] text-white" id="login-btn">Login</button>
+
+      <button
+        type="submit"
+        class="btn bg-[#0874f2] mt-6 w-full rounded-[32px] text-white"
+        id="login-btn"
+      >
+        Login
+      </button>
     </form>
-    <!-- js script -->
+
+    <!-- JS Script -->
     <script src="./js/script.js"></script>
   </body>
 </html>
