@@ -1,5 +1,6 @@
 const pin=1256
 const accNum=12345678910
+const transactionData=[]
 // get number 
 function getNumber(id){
   const getInputNumber=parseInt(document.getElementById(id).value)
@@ -58,6 +59,12 @@ document.getElementById('add-money-btn').addEventListener('click',function(event
     }
     const mainBalance=addMoney+balance
     setInnerText(mainBalance)
+    const data={
+        name:'Add Money',
+        time:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
+    console.log(transactionData)
   
 })
 // cash-out-btn
@@ -79,6 +86,12 @@ document.getElementById('cash-out-btn').addEventListener('click',function(event)
 
      const mainBalance=balance-withdrawAmount
      setInnerText(mainBalance)
+       
+     const data={
+        name:'Cash Out',
+        time:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
   
 })
 // transfer money
@@ -99,17 +112,69 @@ document.getElementById('cash-out-btn').addEventListener('click',function(event)
     }
     const mainBalance=balance-transferAmount
     setInnerText(mainBalance)
+      const data={
+        name:'Transfer Money',
+        time:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
         
 })
+// pay money
+document.getElementById('pay-money-btn').addEventListener('click',function(event){
+    event.preventDefault()
 
+    const bank=document.getElementById('pay-bank').value
+    const payMoney= getNumber('pay-money')
+    const pinNum=getNumber('pay-pin')
+    const balance=getBalance('balance')
+    const paymentNum=document.getElementById('payment-num').value
+    
+    if(bank.includes('Select Bank')){
+        alert('Please Select Bank ')
+        return
+    }
+     if(paymentNum.length<11){
+        alert('Please provide a valid bank number')
+        return
+    }else if(pin!==pinNum){
+        alert('Invalid Pin')
+        return
+    }
+    const mainBalance=balance-payMoney
+    setInnerText(mainBalance)
+      const data={
+        name:'Pay Bill',
+        time:new Date().toLocaleTimeString()
+    }
+    transactionData.push(data)
+  
+})
 
-
-
-
-
-
-
-
+// transaction
+document.getElementById('transaction-click').addEventListener('click',function(){
+      const transactionContainer=document.getElementById('transaction-container')
+     transactionContainer.innerHTML = "" 
+     for (const data of transactionData){
+        const div=document.createElement('div')
+        div.innerHTML=`
+        <div class=" flex justify-between items-center   bg-white p-3 border-1 border-[#0808081a] rounded-[12px] mt-2">
+               <div class="flex   items-center  gap-3">
+              <div class=" rounded-full p-3 bg-[#0808080d]">
+                <img src="./assets/wallet1.png" alt="">
+              </div>
+              <div>
+                <h1 class="text-[1rem] font-semibold">${data.name}</h1>
+                <p class="text-xs text-[#08080880]">${data.time}</p>
+              </div>
+            </div>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        
+        `
+        transactionContainer.appendChild(div)
+     }
+     
+})
 
 // toggling feature
 document.getElementById('add-click').addEventListener('click',function(){
@@ -132,9 +197,18 @@ document.getElementById('coupon-click').addEventListener('click',function(){
      handleToggle('coupon-parent') 
      handleClick('coupon-click')     
 })
+document.getElementById('pay-click').addEventListener('click',function(){
+     handleToggle('pay-parent') 
+     handleClick('pay-click')     
+})
+document.getElementById('transaction-click').addEventListener('click',function(){
+     handleToggle('transaction-parent') 
+     handleClick('transaction-click')     
+})
 
 
 // log-out
 document.getElementById('log-out').addEventListener('click',function(){
     window.location.href="./index.html"
 })
+
