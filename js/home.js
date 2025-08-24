@@ -45,6 +45,10 @@ document.getElementById('add-money-btn').addEventListener('click',function(event
     const addMoney= getNumber('add-money')
     const pinNum=getNumber('pin-num')
     const balance=getBalance('balance')
+    if(addMoney<=0){
+        alert('Invalid Amount')
+        return
+    }
     
     if(bank.includes('Select Bank')){
         alert('Please Select Bank ')
@@ -74,6 +78,12 @@ document.getElementById('cash-out-btn').addEventListener('click',function(event)
      const withdrawAmount=getNumber('cash-out')
      const pinNum=getNumber('out-pin-num')
      const agNum=document.getElementById('agent-num').value
+     if(withdrawAmount<=0||balance<withdrawAmount){
+        alert('Insufficient Balance')
+        return
+     }
+     
+     
      if(agNum.length<11){
         alert('Invalid Number')
         return
@@ -101,6 +111,10 @@ document.getElementById('cash-out-btn').addEventListener('click',function(event)
        const transferAmount=getNumber('transfer-amount')
        const transferpin=getNumber('transfer-pin')
        const balance=getBalance('balance')
+       if(transferAmount<=0||balance<transferAmount){
+        alert('Insufficient Balance')
+        return
+       }
      
     if(transferNum.length<11){
         alert('Invalid Number')
@@ -128,6 +142,11 @@ document.getElementById('pay-money-btn').addEventListener('click',function(event
     const pinNum=getNumber('pay-pin')
     const balance=getBalance('balance')
     const paymentNum=document.getElementById('payment-num').value
+
+    if(payMoney<=0||balance<payMoney){
+        alert('Insufficient Balance')
+        return
+    }
     
     if(bank.includes('Select Bank')){
         alert('Please Select Bank ')
